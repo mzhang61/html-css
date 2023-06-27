@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* 
+    Horizontal layout:
+        left + margin-left + border-left + padding-left + width + padding-right
+        + border-right + margin-right + right = Containing block's width.
+
+    -When absolute positioning is enabled:
+     The horizontal layout equation requires adding left and right values
+     Now, the rule is same as before with two more values: When excessive restraint occurs:
+     if there is no auto among the 9 values, the right value is automatically adjusted to satisfy the equation
+     if auto is present, the value of auto is automatically adjusted to satisfy the equation.
+
+    -Set value to auto on margin's width, left, and right.
+     Bacause the value of left and right is auto in default when they are not declared, so two values
+     will be adjusted automatically to satisfy the equation
+
+    -The vertical layout equation must also be satisfied 
+     top + margin - top/bottom + padding-top/bottom + border- top/bottom + height = height of containing block
+
+
+
+     */
+    .box1{
+      width: 500px;
+      height: 500px;
+      background-color: #bfa;
+      position: relative;
+    }
+
+    .box2{
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;  
+    }
+  </style>
+  <body>
+    <div class="box1">
+      <div class="box2"></div>
+    </div>
+  </body>
+</html>

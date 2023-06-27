@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        -Features of absolute positoning:
+            1. After absolute positioning is enabled, the element position does
+               not change if the offset is not set
+            2. When absolute positioning is enabled, elements are removed from the 
+               normal flow
+            3. Absolute positioning will change the property of the element. 
+               The inline element will become a block, and the width and height of 
+               the block will be stretched by the content.
+            4. Absolute positioning elevates the element to a higher level
+            5. Absolute positioning elements are positioned relative to their containing blocks
+                (containing block): The containing block is the closest ancestor block element
+                                    to the current element.
+                                    <div> <div> </div> </div>  : outside div is the containing block
+                                    <div> <span> <em></em> </span> </div> : outside div is the containing block
+                (absolutely positioned containing block): The containing block is its cloest ancestor element
+                                                          to which the position(css) is turned on. If all the ancestor elements do not have position turned on,
+                                                          the root element is its containing block.
+                -html is the (root element, initial containing block)                        
+            
+
+         */
+
+         body{
+            font-size: 60px;
+         }
+
+         .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+         }
+
+         .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            position: absolute;
+            /* the distance is 0. The box 2 is at the same height as its containing block  */
+            top: 0;
+            right: 20px;
+         }
+
+         .box3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+         }
+
+         .box4{
+            width: 400px;
+            height: 400px;
+            background-color: tomato;
+            /* position turned on, the 2 element with absolute will move close to the ancestor */
+            position: relative;
+        
+         }
+
+         .box5{
+            width: 300px;
+            height: 300px;
+            background-color: aliceblue;
+            position: relative;
+         }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+
+    <div class="box4">4
+        <div class="box5">5
+            <div class="box2">2</div>
+        </div>
+    </div>
+
+    <div class="box3">3</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        Problems with height collapse:
+            In a floating layout, the parent element's height  is expanded by
+            the child element.
+            When the child element floats, it is completely removed from the normal flow,
+            and the child element will not be able to hold the height of the parent element.
+            It also causes the height of the parent element to be lost.
+            When the height of the parent element is lost, the elements below it automatically
+            move up, resulting in a chaotic layout of the page.
+            Therefore, height collapse is a common problem in floating layout, wwhich we need to solve.
+        
+        Solution:
+            Block Formatting Context(BFC)
+            -BFC is an implicit property of CSS. When BFC is enabled, an element becomes a 
+             separate layout area
+            -Features of elements after BFC is enabled:
+                1. The BFC enabled element will not be overwritten by the floating element.
+                2. With BFC enabled, child element and parent elements do not overlap.
+                3. The element whose BFC is enabled can contain floating child elements.
+            -The BFC of an element can be turned on in a few special ways:
+                1. Set element float(not recommended)
+                2. Set elements to inline block elements (not recommended)
+                3. Set the overflow of elements to a value that is not visible
+                - The common way to set overflow: hidden for an element is to open
+                  its BFC so that it can contain floating elements.
+
+            
+
+
+         */
+        .outer{
+            border: 10px red solid;
+           /*  float: left;
+            display: inline-block; */
+            overflow: hidden;
+            
+        }
+
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            float: left;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+    <div style="width: 200px; height: 200 px; background-color: yellow;"></div>
+</body>
+</html>

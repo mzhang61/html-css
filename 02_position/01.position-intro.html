@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+         position allows you to place elements anywhere on the page
+         Use the position attribute to set the position 
+
+        Optional values: 
+            static: Default value. Positioning is not enabled.
+            relative, absolute, fixed, sticky.
+        
+        relative: 1. After relative positioning is enabled, the element will not 
+                     change if the offset is not set
+                  2. Relative positioning refers to the position of elements in the normal flow
+                  3. relative positioning elevates the level of the element
+                  4. relative positioning does not remove elements from the normal flow
+                  5. relative positioning does not change the attribute of the element(block or inline).
+
+        offset: When positioning is enabled for an element, the element position can be set by offset.
+                The distance between the positioning element and the positioning position
+               
+               top: move down
+               bottom: move up
+               left: move right
+               right: move left
+         */
+
+         body{
+            font-size: 60px;
+         }
+
+         .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+         }
+
+         .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            position: relative;
+            left: 100px;
+            top: -200px;
+         }
+
+         .box3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+         }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

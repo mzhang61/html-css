@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*
+    animation and transition are similar in that they can achieve some dynamic effects.
+    The difference is that transitions need to be triggered when a property changes.
+    Animation can automatically trigger dynamic effects.
+    To set the animation effect, you must first set a keyframe, which it sets the animation to perform each step.
+
+     */
+     *{
+        margin: 0;
+        padding: 0;
+     }
+
+     .box1{
+        width: 800px;
+        height: 800px;
+        background-color: silver;
+        overflow: hidden;
+     }
+
+     .box1 div{
+        width: 100px;
+        height: 100px;
+        margin-bottom: 100px;
+        margin-left: 10px;
+     }
+
+     .box2{
+        background-color: #bfa;
+        animation-name: test;
+        animation-duration: 4s;
+        animation-iteration-count: 2;
+        animation-delay: 2s;
+        animation-fill-mode: alternate;
+        /* shortcut for above 
+        animation: test 4s 2 2s alternate;
+        */
+
+        /* normal, reverse 
+        alternate: repeaetly from-to
+        alternate-rever: repeatly to-from
+        */
+        animation-direction: reverse;
+        /* 
+        none: after the animation is complted, the picture goes back to original spot.
+        forward: after the animation is complted, the picture stops at the finished position.
+        backward: from end to start, the duration is the time the box waitted on the end point.
+        both: forward + backward
+         */
+       
+     }
+
+     .box1:hover div{
+        /* default is running */
+        animation-play-state: paused;
+     }
+
+     @keyframes test{
+        from{
+            margin-left: 0;
+            background-color: orange;
+        }
+
+        to{
+            background-color: red;
+            margin-left: 700px;
+     }
+    }
+</style>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

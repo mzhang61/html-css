@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        transition:
+            -Transition allow you to specify how to switch when an attribute changes
+            -Transition can create some great effects and enhance the user experience 
+
+        transition-property: specifies the attribute on which the transition is to be performed.
+                             Multiple attributes are separated. If all attributes need to be transitioned use the all keyword.
+                             Most attributes support transitions. Transition must be made from one valid value to another valid value.
+                             
+                             transition-property: height, width;
+                             transition-property: all;
+        
+        transition-duration: specifies the duration of the transition effect
+
+                             transition-duration: 100ms, 2s;
+                             transition-duration: 2s;
+        transition-timing-function: specifies the timing function of the transition
+            available values:
+                            ease: default, start slow, speed up, then slow down
+                            linear: is in constant motion
+                            ease-in: acceleration
+                            ease-out: deceleration
+                            ease-inease-out: speed up and then slows down
+                            cubic-bezier(): specify the timing function (https://cubic-bezier.com)
+                            steps(): perform the transition effect in steps
+                                     two values for steps(): end: perform the transition at the end of time(default)
+                                                             start: performs the transition at the beginnning of time
+
+            */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            overflow: hidden;
+        }
+
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+            margin-left: 0;
+        }
+
+        .box2{
+            background-color: #bfa;
+            margin-left: auto;
+            transition: all 2s;
+            transition: 2s margin-left 1s cubic-bezier(.24, .95, .82, -0.88);
+        }
+
+        .box3{
+            background-color: orange;
+            transition-property: all;
+            transition-duration: 2s;
+        }
+
+        .box1:hover div{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin-left: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    
+</body>
+</html>

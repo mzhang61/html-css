@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 100px;
+            width: 100px;
+            background-color: #bfa;
+            float: left;
+            /* 
+            The floating element doesn't cover the text. The text automatically
+            wraps around the floating element, so we can use the float to set the
+            text around the image.
+             */     
+    }
+        .box2{
+            background-color: yellowgreen;
+            float: left;
+            /* 
+            After the element is set to float, it will be removed from the normal flow,
+            and some characteristics of the element will change.
+                Block element: 
+                    1. Block elements do not take one line.
+                    2. When removed from the normal flow, the width and height of the block
+                       element are by default widened by the content.
+                Inline elements;
+                    Inline elements, when removed from the normal flow, become block elements,
+                    with the same characteristics as block elements.
+                
+            Summary: Once elements are out of the normal flow, we no longer need to distinguish between blocks and lines.
+             */
+
+        }
+        
+        .box3{
+            background-color: orange;
+            
+        }
+
+        .s1{
+            float: left;
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>
+        will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? will words be covered? 
+    </p>
+
+    <span class="s1">hello, I'm span</span>
+    <div class="box2">hello box2</div>
+    <div class="box3">hello box3</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+        To solve the problem that picture falshes. Multiple small pictures can be saved into one big picture, and then
+        the picture can be displayed by adjusting the background-position. In this way, the image will be loaded into the page
+        at the same time, which can effectively avoid the problem of flickering. This technique is widely used in web pages and is 
+        called CSS-Sprite, which we call Sprite graphics
+
+        Steps to use Sprite graphics:
+            1. Determine the icon you want to use
+            2. Measure the size of the icon
+            3. Create an element based on the measurement results
+            4. Set the Sprite image as the background image of the element
+            5. Set an offset to display the correct image.
+
+        Sprite graphic feature:
+            Loading one combined image for images into the page at once reduces the size to load on the page, 
+            speeds up the request time, and improves user experience.
+        */
+      a:link {
+        display: block;
+        width: 93px;
+        height: 29px;
+        background-image: url("./img/09/btn.png");
+      }
+
+      a:hover {
+        background-position: -93px 0;
+      }
+
+      a:active {
+        background-position: -186px 0;
+      }
+
+      .box1 {
+        width: 128px;
+        height: 46px;
+        background-image: url("./img/09/amazon-sprite_.png");
+        background-position: 0 0;
+      }
+
+      .box2 {
+        width: 42px;
+        height: 30px;
+        background-image: url("./img/09/amazon-sprite_.png");
+        background-position: -58px -338px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+
+    <a href="#"></a>
+  </body>
+</html>

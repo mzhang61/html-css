@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* 
+            using float: the element can move to the left or right of its parents element
+
+                usage   float: none
+                        float: left
+                        float: right
+
+                When the element is set to float, it is completely removed from the normal flow
+                and no longer occupies its place in the normal flow, so the elements below the first
+                element that are still in the normal flow will automatically move up
+
+                Characteristics of floating:
+                1. Floating elements are completely removed from the flow and no longer occupy a place
+                   in the normal flow.
+                2. After setting float, the element will move to the left or right of the parent element
+                3. Floating elements are not moved from the parent element by default(none is default value)
+                4. A floating element moves left or right without overtaking any other floating element in
+                   front of it.
+                5. A floating element cannot be moved up if it is preceded by a non-floating block element
+                6. A floating element does not exceed its floating sibling. (For example, first and second elements
+                   are set to float left, and the third element is set to float right. The third box will not skip the
+                   second element. The third box can only move next to the second box.)
+                
+                Summary: The main purpose of float is to arrange elements horizontally on the page.
+
+            */
+            width: 400px;
+            height: 200px;
+            background-color: #bfa;
+            float: left;
+        }
+
+        .box2{
+            width: 400px;
+            height: 200px;
+            background-color: orange;
+            float: left;
+        }
+
+        .box3{
+            width: 400px;
+            height: 300px;
+            background-color: yellow;
+            float: left;
+        
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

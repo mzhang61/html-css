@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 60px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            position: absolute;
+            /* 
+                For elements with positioning enabled, the hierarchy of the element
+                can be specified using the z-index atrribute.
+                z-index requires an integer as an argument. The larger the value, the higher the level of the element.
+                The higher level of the element has the higher priority to display on the top layer.
+
+                If the level of the element is the same, the lower element is displayed first.
+
+                The higer level of ancestors does not cover the lower level of descendant element.
+             */
+             /* z-index: 3; */
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255 , 0, 0, .3);
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            /* z-index: 3; */
+
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 3;
+
+        }
+
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3
+        <div class="box4">4</div>
+    </div>
+
+    
+</body>
+</html>
